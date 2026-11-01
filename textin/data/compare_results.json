@@ -1,0 +1,157 @@
+{
+  "baseline": "Search settings",
+  "rows": [
+    {
+      "name": "纯 ASCII",
+      "input": "hello",
+      "a_input_text": "hello",
+      "a_ok": true,
+      "b_set_text": "hello",
+      "b_ok": true
+    },
+    {
+      "name": "带空格",
+      "input": "hello world",
+      "a_input_text": "hello",
+      "a_ok": false,
+      "b_set_text": "hello world",
+      "b_ok": true
+    },
+    {
+      "name": "中文",
+      "input": "你好世界",
+      "a_input_text": "Search settings",
+      "a_ok": false,
+      "b_set_text": "你好世界",
+      "b_ok": true
+    },
+    {
+      "name": "emoji",
+      "input": "hi😀ok",
+      "a_input_text": "Search settings",
+      "a_ok": false,
+      "b_set_text": "hi😀ok",
+      "b_ok": true
+    },
+    {
+      "name": "井号",
+      "input": "a#b",
+      "a_input_text": "a#b",
+      "a_ok": true,
+      "b_set_text": "a#b",
+      "b_ok": true
+    },
+    {
+      "name": "分号",
+      "input": "a;b",
+      "a_input_text": "a",
+      "a_ok": false,
+      "b_set_text": "a;b",
+      "b_ok": true
+    },
+    {
+      "name": "反引号",
+      "input": "a`b`c",
+      "a_input_text": "ac",
+      "a_ok": false,
+      "b_set_text": "a`b`c",
+      "b_ok": true
+    },
+    {
+      "name": "美元",
+      "input": "a$b",
+      "a_input_text": "a",
+      "a_ok": false,
+      "b_set_text": "a$b",
+      "b_ok": true
+    },
+    {
+      "name": "单引号",
+      "input": "a'b",
+      "a_input_text": "Search settings",
+      "a_ok": false,
+      "b_set_text": "a'b",
+      "b_ok": true
+    },
+    {
+      "name": "双引号",
+      "input": "a\"b",
+      "a_input_text": "Search settings",
+      "a_ok": false,
+      "b_set_text": "a\"b",
+      "b_ok": true
+    },
+    {
+      "name": "竖线",
+      "input": "a|b",
+      "a_input_text": "a",
+      "a_ok": false,
+      "b_set_text": "a|b",
+      "b_ok": true
+    },
+    {
+      "name": "与号",
+      "input": "a&b",
+      "a_input_text": "a",
+      "a_ok": false,
+      "b_set_text": "a&b",
+      "b_ok": true
+    },
+    {
+      "name": "圆括号",
+      "input": "a(b)c",
+      "a_input_text": "Search settings",
+      "a_ok": false,
+      "b_set_text": "a(b)c",
+      "b_ok": true
+    },
+    {
+      "name": "百分号",
+      "input": "a%s",
+      "a_input_text": "a ",
+      "a_ok": false,
+      "b_set_text": "a%s",
+      "b_ok": true
+    },
+    {
+      "name": "空格加百分号",
+      "input": "a b%s",
+      "a_input_text": "a",
+      "a_ok": false,
+      "b_set_text": "a b%s",
+      "b_ok": true
+    },
+    {
+      "name": "反斜杠",
+      "input": "a\\b",
+      "a_input_text": "ab",
+      "a_ok": false,
+      "b_set_text": "a\\b",
+      "b_ok": true
+    },
+    {
+      "name": "星号问号",
+      "input": "a*b?",
+      "a_input_text": "a*b?",
+      "a_ok": true,
+      "b_set_text": "a*b?",
+      "b_ok": true
+    },
+    {
+      "name": "首尾空格",
+      "input": " pad ",
+      "a_input_text": "pad",
+      "a_ok": false,
+      "b_set_text": " pad ",
+      "b_ok": true
+    },
+    {
+      "name": "长串 200",
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "a_input_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "a_ok": true,
+      "b_set_text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "b_ok": true
+    }
+  ]
+}

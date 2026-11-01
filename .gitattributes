@@ -1,0 +1,10 @@
+# Keep shell and Python sources LF even when cloned on Windows, otherwise
+# test scripts fail with a bad interpreter error.
+*.sh text eol=lf
+*.py text eol=lf
+
+# 二进制与数据文件不参与行尾转换
+*.xml -text
+*.json -text
+*.png -text
+*.md text eol=lf

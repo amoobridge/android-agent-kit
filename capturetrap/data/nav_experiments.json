@@ -1,0 +1,33 @@
+{
+  "note": "★ 导航假设未复现，此处留档原始观测与复现结果",
+  "hypothesis": "am start 是恢复原语，不 force-stop 会停在上次页面",
+  "first_observation": {
+    "context": "设备停在 Connected devices，此前跑过 textin/swipefind 实验",
+    "no_force_stop": {
+      "am start -a android.settings.SETTINGS": "Connected devices",
+      "am start -a android.settings.WIFI_SETTINGS": "Android Auto / 65.54 kB",
+      "am start -n com.android.settings/.wifi.WifiSettings": "Connected devices"
+    },
+    "with_force_stop": {
+      "am start -a android.settings.SETTINGS": "Settings / Search settings",
+      "am start -a android.settings.WIFI_SETTINGS": "T-Mobile / Connected / 3G",
+      "am start -n com.android.settings/.wifi.WifiSettings": "net / Wi-Fi (3/3)"
+    }
+  },
+  "reproduction_attempt": {
+    "setup": "先打开 Wi-Fi 设置，再连续三次 am start -a android.settings.SETTINGS",
+    "no_force_stop": [
+      "Settings / Search settings",
+      "Settings / Search settings",
+      "Settings / Search settings"
+    ],
+    "with_force_stop": [
+      "Settings / Search settings",
+      "Settings / Search settings",
+      "Settings / Search settings"
+    ],
+    "conclusion": "★ 未复现。两种情况下都正确落到 Settings 主页。"
+  },
+  "verdict": "假设不成立，或仅在特定设备状态下成立。不得作为结论提交。",
+  "salvaged": "真正可复现的是抓取层本身的四个陷阱，见 SPEC.md"
+}

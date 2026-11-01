@@ -1,0 +1,169 @@
+{
+  "duration": [
+    {
+      "dur_ms": 50,
+      "scrolled": true,
+      "text_before": 6,
+      "text_after": 9,
+      "new": 9,
+      "gone": 6
+    },
+    {
+      "dur_ms": 100,
+      "scrolled": true,
+      "text_before": 9,
+      "text_after": 17,
+      "new": 17,
+      "gone": 9
+    },
+    {
+      "dur_ms": 150,
+      "scrolled": true,
+      "text_before": 13,
+      "text_after": 22,
+      "new": 8,
+      "gone": 0
+    },
+    {
+      "dur_ms": 200,
+      "scrolled": true,
+      "text_before": 0,
+      "text_after": 23,
+      "new": 22,
+      "gone": 0
+    },
+    {
+      "dur_ms": 300,
+      "scrolled": false,
+      "text_before": 19,
+      "text_after": 19,
+      "new": 0,
+      "gone": 0
+    },
+    {
+      "dur_ms": 500,
+      "scrolled": true,
+      "text_before": 19,
+      "text_after": 22,
+      "new": 4,
+      "gone": 1
+    },
+    {
+      "dur_ms": 800,
+      "scrolled": true,
+      "text_before": 22,
+      "text_after": 23,
+      "new": 4,
+      "gone": 4
+    }
+  ],
+  "exhaustion": [
+    {
+      "step": 1,
+      "new": 9,
+      "gone": 6,
+      "same": false
+    },
+    {
+      "step": 2,
+      "new": 0,
+      "gone": 0,
+      "same": true
+    }
+  ],
+  "overshoot": [
+    {
+      "steps_down": 9,
+      "steps_up": 9,
+      "restored": 1,
+      "restored_ratio": 0.16666666666666666
+    }
+  ],
+  "threshold": [
+    {
+      "dur_ms": 200,
+      "new": 4,
+      "gone": 1,
+      "effective": true
+    },
+    {
+      "dur_ms": 220,
+      "new": 4,
+      "gone": 2,
+      "effective": true
+    },
+    {
+      "dur_ms": 240,
+      "new": 4,
+      "gone": 4,
+      "effective": true
+    },
+    {
+      "dur_ms": 260,
+      "new": 2,
+      "gone": 2,
+      "effective": true
+    },
+    {
+      "dur_ms": 280,
+      "new": 3,
+      "gone": 3,
+      "effective": true
+    },
+    {
+      "dur_ms": 300,
+      "new": 3,
+      "gone": 3,
+      "effective": true
+    }
+  ],
+  "distance": [
+    {
+      "dist": "100px",
+      "new": 0,
+      "gone": 0,
+      "effective": false
+    },
+    {
+      "dist": "300px",
+      "new": 0,
+      "gone": 1,
+      "effective": false
+    },
+    {
+      "dist": "600px",
+      "new": 2,
+      "gone": 1,
+      "effective": true
+    },
+    {
+      "dist": "900px",
+      "new": 2,
+      "gone": 3,
+      "effective": true
+    },
+    {
+      "dist": "1200px",
+      "new": 0,
+      "gone": 0,
+      "effective": false
+    },
+    {
+      "dist": "1500px",
+      "new": 0,
+      "gone": 0,
+      "effective": false
+    }
+  ],
+  "from_keyboard": [
+    {
+      "keyboard_up": true,
+      "start_in_keyboard": true,
+      "new": 13,
+      "gone": 2,
+      "keyboard_still_up": true,
+      "control_new": 0,
+      "control_gone": 0
+    }
+  ]
+}

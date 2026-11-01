@@ -1,0 +1,26 @@
+[
+  {
+    "label": "键盘区垂直上滑",
+    "before": "net",
+    "after": "net by",
+    "keyboard_before": true,
+    "keyboard_after": true,
+    "field_changed": true
+  },
+  {
+    "label": "键盘区斜滑",
+    "before": "net",
+    "after": "net be",
+    "keyboard_before": true,
+    "keyboard_after": true,
+    "field_changed": true
+  },
+  {
+    "label": "键盘区短滑",
+    "before": "net",
+    "after": "net gt",
+    "keyboard_before": true,
+    "keyboard_after": true,
+    "field_changed": true
+  }
+]

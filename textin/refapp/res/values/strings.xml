@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">textin refapp</string>
+    <string name="svc_label">textin SET_TEXT 参考服务</string>
+    <string name="svc_desc">演示用无障碍服务：把文本写入当前焦点输入框。仅本机使用。</string>
+    <string name="hint_status">服务状态</string>
+    <string name="hint_input">测试输入框</string>
+    <string name="btn_open_settings">打开无障碍设置</string>
+    <string name="btn_send">发送广播（等效 adb）</string>
+</resources>

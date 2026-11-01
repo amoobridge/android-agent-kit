@@ -1,0 +1,176 @@
+{
+  "baseline": "Search settings",
+  "results": [
+    {
+      "name": "纯 ASCII",
+      "input": "hello",
+      "got": "hello",
+      "before": "Search settings",
+      "verdict": "✅ 干净",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "带空格",
+      "input": "hello world",
+      "got": "hello",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "中文",
+      "input": "你好世界",
+      "got": "Search settings",
+      "before": "Search settings",
+      "verdict": "❌ 无变化",
+      "adb_rc": 255,
+      "adb_stderr": "Exception occurred while executing 'text':\njava.lang.NullPointerException: Attempt to get length of null array\n\tat com.android.server.input.InputShell"
+    },
+    {
+      "name": "emoji",
+      "input": "hi😀ok",
+      "got": "Search settings",
+      "before": "Search settings",
+      "verdict": "❌ 无变化",
+      "adb_rc": 255,
+      "adb_stderr": "Exception occurred while executing 'text':\njava.lang.NullPointerException: Attempt to get length of null array\n\tat com.android.server.input.InputShell"
+    },
+    {
+      "name": "井号",
+      "input": "a#b",
+      "got": "a#b",
+      "before": "Search settings",
+      "verdict": "✅ 干净",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "分号",
+      "input": "a;b",
+      "got": "a",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 127,
+      "adb_stderr": "/system/bin/sh: b: inaccessible or not found"
+    },
+    {
+      "name": "反引号",
+      "input": "a`b`c",
+      "got": "ac",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 0,
+      "adb_stderr": "/system/bin/sh: b: inaccessible or not found"
+    },
+    {
+      "name": "美元",
+      "input": "a$b",
+      "got": "a",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "单引号",
+      "input": "a'b",
+      "got": "Search settings",
+      "before": "Search settings",
+      "verdict": "❌ 无变化",
+      "adb_rc": 1,
+      "adb_stderr": "/system/bin/sh: no closing quote"
+    },
+    {
+      "name": "双引号",
+      "input": "a\"b",
+      "got": "Search settings",
+      "before": "Search settings",
+      "verdict": "❌ 无变化",
+      "adb_rc": 1,
+      "adb_stderr": "/system/bin/sh: no closing quote"
+    },
+    {
+      "name": "竖线",
+      "input": "a|b",
+      "got": "a",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 127,
+      "adb_stderr": "/system/bin/sh: b: inaccessible or not found"
+    },
+    {
+      "name": "与号",
+      "input": "a&b",
+      "got": "a",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 127,
+      "adb_stderr": "/system/bin/sh: b: inaccessible or not found"
+    },
+    {
+      "name": "圆括号",
+      "input": "a(b)c",
+      "got": "Search settings",
+      "before": "Search settings",
+      "verdict": "❌ 无变化",
+      "adb_rc": 1,
+      "adb_stderr": "/system/bin/sh: syntax error: unexpected '('"
+    },
+    {
+      "name": "百分号",
+      "input": "a%s",
+      "got": "a ",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "空格加百分号",
+      "input": "a b%s",
+      "got": "a",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "反斜杠",
+      "input": "a\\b",
+      "got": "ab",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "星号问号",
+      "input": "a*b?",
+      "got": "a*b?",
+      "before": "Search settings",
+      "verdict": "✅ 干净",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "首尾空格",
+      "input": " pad ",
+      "got": "pad",
+      "before": "Search settings",
+      "verdict": "❌ 不符",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    },
+    {
+      "name": "长串 200",
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "got": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "before": "Search settings",
+      "verdict": "✅ 干净",
+      "adb_rc": 0,
+      "adb_stderr": ""
+    }
+  ]
+}

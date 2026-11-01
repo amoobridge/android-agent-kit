@@ -1,0 +1,73 @@
+{
+  "id": "clamp-out-of-range-001",
+  "title": "越界必须钳制并上报",
+  "why": "模型常返回略超值域的点。静默丢弃比钳制更糟；钳制了不报同样糟。",
+  "src": {
+    "kind": "pixel",
+    "width": 1000,
+    "height": 1000
+  },
+  "dst": {
+    "kind": "pixel",
+    "width": 1080,
+    "height": 2400
+  },
+  "fit": "stretch",
+  "cases": [
+    {
+      "in": [
+        -50,
+        -50
+      ],
+      "out": [
+        0,
+        0
+      ],
+      "clamped": true
+    },
+    {
+      "in": [
+        1050,
+        1050
+      ],
+      "out": [
+        1079,
+        2399
+      ],
+      "clamped": true
+    },
+    {
+      "in": [
+        5000,
+        5000
+      ],
+      "out": [
+        1079,
+        2399
+      ],
+      "clamped": true
+    },
+    {
+      "in": [
+        0,
+        0
+      ],
+      "out": [
+        0,
+        0
+      ],
+      "clamped": false
+    },
+    {
+      "in": [
+        1000,
+        1000
+      ],
+      "out": [
+        1079,
+        2399
+      ],
+      "clamped": true
+    }
+  ]
+}

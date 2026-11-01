@@ -1,0 +1,42 @@
+[
+  {
+    "id": "m13-crlf",
+    "statement": "adb shell 把 LF 转成 CRLF 污染 XML",
+    "observations": 0,
+    "has_control": false,
+    "has_baseline": false,
+    "original_observation": "未在本环境实测，凭经验写入",
+    "refuted": true,
+    "refuted_by": "adb shell 与 exec-out cat 输出字节完全相同；uiautomator dump 的 XML 是单行、0 个换行符，该现象无从显现"
+  },
+  {
+    "id": "m23-reset-home",
+    "statement": "am start + KEYCODE_BACK 不能复位滚动位置",
+    "observations": 1,
+    "has_control": false,
+    "has_baseline": false,
+    "original_observation": "实验 3 观察到滚过头后 restored = 0/6",
+    "refuted": true,
+    "refuted_by": "HOME 键可复位；结论方向对但机制归因错误——真因是 am start 不重置滚动位置，而 BACK 在某些状态下回到启动器"
+  },
+  {
+    "id": "m23-threshold",
+    "statement": "200ms 以下手势完全无效",
+    "observations": 1,
+    "has_control": false,
+    "has_baseline": false,
+    "original_observation": "实验 1 中 200ms 无新增",
+    "refuted": true,
+    "refuted_by": "复位用错导致的阈值假象。改用 HOME 键复位后 200ms 有效（新增 4）"
+  },
+  {
+    "id": "m24-am-start",
+    "statement": "am start 是恢复原语，不 force-stop 会停在上次页面",
+    "observations": 1,
+    "has_control": true,
+    "has_baseline": false,
+    "original_observation": "设备停在 Connected devices 时，三种命令不 force-stop 全部落错，force-stop 后全部落对",
+    "refuted": true,
+    "refuted_by": "换起始状态（先开 Wi-Fi 设置）后，不 force-stop 的 am start -a android.settings.SETTINGS 三次全部正确落到 Settings 主页"
+  }
+]

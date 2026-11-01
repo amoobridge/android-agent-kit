@@ -1,0 +1,47 @@
+{
+  "screens": [
+    {
+      "screen": "设置搜索（有 hint）",
+      "fields": [
+        {
+          "text": "net",
+          "hint": null,
+          "focused": "false",
+          "focusable": "true",
+          "editable": null,
+          "enabled": "true",
+          "clickable": "true",
+          "long-clickable": "true",
+          "password": "false",
+          "scrollable": "false",
+          "selected": "false",
+          "checkable": "false",
+          "checked": "false",
+          "class": "android.widget.EditText",
+          "resource-id": "com.google.android.settings.intelligence:id/open_search_view_edit_text",
+          "content-desc": "",
+          "text-selection-start": null,
+          "text-selection-end": null,
+          "cursor-visible": null,
+          "bounds": "[126,136][933,325]"
+        }
+      ]
+    },
+    {
+      "screen": "设置主页",
+      "fields": []
+    },
+    {
+      "screen": "WIFI 列表",
+      "fields": []
+    },
+    {
+      "screen": "日期时间",
+      "fields": []
+    },
+    {
+      "screen": "显示",
+      "fields": []
+    }
+  ]
+}

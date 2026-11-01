@@ -1,0 +1,72 @@
+[
+  {
+    "state": "S1_before",
+    "note": "键盘弹起",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S1_after_1back",
+    "note": "BACK 一次",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S1_after_2back",
+    "note": "BACK 两次",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S5_before",
+    "note": "键盘=False",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S2_before",
+    "note": "子页面",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S2_after_1back",
+    "note": "BACK 一次",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S3_before",
+    "note": "顶层设置页",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S3_after_1back",
+    "note": "BACK 一次",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S4_before",
+    "note": "长按后",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  },
+  {
+    "state": "S4_after_1back",
+    "note": "BACK 一次",
+    "focus": "",
+    "keyboard": false,
+    "sig": ""
+  }
+]

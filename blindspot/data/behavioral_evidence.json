@@ -1,0 +1,17 @@
+{
+  "device": "emulator-5554",
+  "android": "15 (AVD avd-api35, Google APIs, arm64-v8a)",
+  "scenario": "设置页搜索，输入 net，键盘弹起，点击 XML 报 clickable=true 但实际位于键盘后的坐标",
+  "keyboard": {"mInputShown": true, "ime_bounds": [0, 1517, 1080, 2400], "screen_fraction": 0.368},
+  "xml_target_node": {
+    "bounds": "[0,1935][1080,2158]",
+    "clickable": "true",
+    "note": "XML 声称这是可点击元素（Allow WEP networks 行）"
+  },
+  "tap": [540, 2017],
+  "before": {"search_field_text": "net"},
+  "after":  {"search_field_text": "netv"},
+  "result": "★ 点击落在键盘的 v 键上，向搜索框写入了一个字符。XML 声称的目标（Allow WEP networks）未被触发。",
+  "silent_failure": true,
+  "note_on_detectability": "agent 若只比较「界面是否变化」会看到变化（搜索框内容变了），可能误判为点击生效。"
+}

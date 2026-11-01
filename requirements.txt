@@ -1,0 +1,7 @@
+# 测试依赖。核心库只用 Python 标准库；下列依赖仅供测试与真机验证工具使用。
+#
+#   pip install -r requirements.txt
+#
+# 不装也能跑绝大部分测试——依赖缺失的用例会 skip 而不是 fail。
+pytest>=7.0
+Pillow>=9.0

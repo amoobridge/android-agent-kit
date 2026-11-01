@@ -1,0 +1,70 @@
+{
+  "id": "refusal-001",
+  "title": "模型拒答或无法确定",
+  "why": "拒答是正常输出。若解析器在这里抛异常或猜一个点，agent 会点在随机位置。",
+  "cases": [
+    {
+      "in": {
+        "x": null,
+        "y": null
+      },
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": {
+        "x": null,
+        "y": null,
+        "reason": "no button visible"
+      },
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": "I cannot see the target.",
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": "找不到目标元素",
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": "",
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": null,
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": 42,
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": "The screen appears to be blank.",
+      "out": [
+        "nopoint"
+      ]
+    },
+    {
+      "in": {
+        "error": "image too small"
+      },
+      "out": [
+        "nopoint"
+      ]
+    }
+  ]
+}

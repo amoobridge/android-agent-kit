@@ -1,0 +1,95 @@
+{
+  "id": "rounding-half-up-001",
+  "title": "四舍五入规则（half-up）",
+  "why": "唯一取整规则。0.5 必须向上，不能是 banker's rounding。",
+  "src": {
+    "kind": "pixel",
+    "width": 3,
+    "height": 3
+  },
+  "dst": {
+    "kind": "pixel",
+    "width": 10,
+    "height": 10
+  },
+  "fit": "stretch",
+  "cases": [
+    {
+      "in": [
+        0,
+        0
+      ],
+      "out": [
+        0,
+        0
+      ],
+      "clamped": false
+    },
+    {
+      "in": [
+        1,
+        1
+      ],
+      "out": [
+        3,
+        3
+      ],
+      "clamped": false
+    },
+    {
+      "in": [
+        2,
+        2
+      ],
+      "out": [
+        7,
+        7
+      ],
+      "clamped": false
+    },
+    {
+      "in": [
+        1,
+        0
+      ],
+      "out": [
+        3,
+        0
+      ],
+      "clamped": false
+    },
+    {
+      "in": [
+        0,
+        1
+      ],
+      "out": [
+        0,
+        3
+      ],
+      "clamped": false
+    },
+    {
+      "in": [
+        2,
+        1
+      ],
+      "out": [
+        7,
+        3
+      ],
+      "clamped": false
+    },
+    {
+      "in": [
+        1,
+        2
+      ],
+      "out": [
+        3,
+        7
+      ],
+      "clamped": false
+    }
+  ]
+}
