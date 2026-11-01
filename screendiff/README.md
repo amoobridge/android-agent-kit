@@ -1,5 +1,8 @@
 # screendiff
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 **GUI Agent 界面变化语义层** · Apache-2.0 · v0.1
 
 > 让 agent 知道：**界面变了没有？变了什么？我的动作起作用了吗？**

@@ -1,5 +1,8 @@
 # uidref · 安卓 UI 元素引用层
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 > **English**
 >
 > A reference layer for Android UI elements: let the model name an element (`e14`) instead of guessing pixel coordinates.

@@ -1,5 +1,8 @@
 # textin/refapp · 最小 SET_TEXT 参考实现
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 **License** Apache-2.0 · **日期** 2026-10-27
 **审计说明** [`AUDIT.md`](AUDIT.md) —— 权限清单 / 接触的能力 / 用户同意点 /
 撤销路径 / 四个读者会问的点。**不需要读代码即可判断这个 App 接触了什么。**

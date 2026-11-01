@@ -1,5 +1,8 @@
 # claimaudit · 把 claimcheck 应用到全部资产的量化声明
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 **License** Apache-2.0 · **版本** 0.1.0 · **日期** 2026-10-27
 
 ---

@@ -1,5 +1,8 @@
 # scrollkey
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 **跨滚动稳定元素键** · Apache-2.0 · v0.1
 
 > 让「我刚才点的那一行」在滚动之后还能被找到。

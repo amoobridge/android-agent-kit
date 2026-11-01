@@ -1,5 +1,8 @@
 # crosstrack
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 **跨页跟踪的信任分级** · Apache-2.0 · v0.1
 
 > agent 从界面 A 跳到界面 B 之后，哪些指代关系还能信？

@@ -1,5 +1,8 @@
 # claimcheck · 经验性声明的验证等级
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 **License** Apache-2.0 · **版本** 0.1.0 · **日期** 2026-10-27
 
 ---

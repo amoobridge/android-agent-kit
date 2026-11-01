@@ -1,5 +1,8 @@
 # blindspot · XML dump 的非 App 窗口盲区
 
+**[English](README.en.md)** · **[中文](README.md)**
+
+
 **License** Apache-2.0 · **版本** 0.1.0 · **日期** 2026-10-27
 **测试环境** AVD `avd-api35`（Android 15 / Google APIs / arm64-v8a）
 
