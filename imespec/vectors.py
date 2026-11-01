@@ -120,7 +120,7 @@ OCCLUSION = [
 UNKNOWN = [
     {
         "id": "xml-only-clickable",
-        "why": "只有 XML、键盘状态未知 → 每个元素 必须 报 unknown。",
+        "why": "只有 XML、键盘状态未知 → 每个元素必须报 unknown。",
         "nodes": [{"text": "按钮A", "clickable": "true",
                    "bounds": "[0,1712][1080,1935]"},
                   {"text": "按钮B", "clickable": "true",

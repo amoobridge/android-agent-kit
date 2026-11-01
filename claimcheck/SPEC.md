@@ -2,6 +2,7 @@
 
 **版本** 0.1.0 · **日期** 2026-10-27 · **License** Apache-2.0
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 0. 这个库是什么
@@ -120,11 +121,11 @@ required_marker(claim) -> str | None
 
 | # | 条件 |
 |---|---|
-| C1 | 分级判定 必须 分别计量观测数、状态数、通道数 |
-| C2 | `should_verify_before_writing` 必须 在单次观测时返回 True |
-| C3 | `refute` 必须 保留 `original_observation`，不得 删除 |
-| C4 | V4 的 `citable` 必须 为 False，不论观测数多少 |
-| C5 | `required_marker` 必须 对 V0 返回「未复现」、V4 返回「已推翻」 |
+| C1 | 分级判定必须分别计量观测数、状态数、通道数 |
+| C2 | `should_verify_before_writing` 必须在单次观测时返回 True |
+| C3 | `refute` 必须保留 `original_observation`，不得删除 |
+| C4 | V4 的 `citable` 必须为 False，不论观测数多少 |
+| C5 | `required_marker` 必须对 V0 返回「未复现」、V4 返回「已推翻」 |
 
 ---
 

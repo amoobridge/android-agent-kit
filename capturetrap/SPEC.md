@@ -3,6 +3,7 @@
 **版本** 0.1.0 · **日期** 2026-10-27 · **License** Apache-2.0
 **测试环境** AVD `avd-api35`（Android 15 / Google APIs / arm64-v8a），emulator-5554
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 0. 这个库是什么
@@ -43,7 +44,7 @@ subprocess.run([ADB, "-s", DEV, "uiautomator", "dump", ...])
 **危害**：我自己的探针因此连续输出 `(empty)` 而不报错。
 如果没去查 returncode，会以为"设备返回了空界面"。
 
-> **C1**：所有 adb 调用 必须 检查 returncode 与 stderr。
+> **C1**：所有 adb 调用必须检查 returncode 与 stderr。
 > 忽略返回码会让"命令根本没执行"和"执行了但结果为空"无法区分。
 
 ### 1.2 ★★ 陷阱二：`text=True` 撞上非 UTF-8 字节
@@ -57,8 +58,8 @@ subprocess.run([...], capture_output=True, text=True)
 `dumpsys` 输出含非 UTF-8 字节。**整个实验直接崩掉**，
 而它崩在抓取阶段，看起来像"设备连不上"。
 
-> **C2**：读 adb 输出 必须 用二进制 + `decode("utf-8", "replace")`，
-> 不得 用 `text=True`（默认 strict）。
+> **C2**：读 adb 输出必须用二进制 + `decode("utf-8", "replace")`，
+> 不得用 `text=True`（默认 strict）。
 
 ### 1.3 ★ 陷阱三：输出以 `<?xml` 声明开头，不是 `<hierarchy`
 
@@ -77,8 +78,8 @@ raw[:200].find(b"<hierarchy") >= 0        # ← 正确
 永远返回 None——**而这是一个静默失效的判据**（函数返回 None，
 调用方只会看到"没抓到"，不会看到"判据写错了"）。
 
-> **C3**：抓取有效性判据 必须 用 `find(...) >= 0` 或剥掉 XML 声明，
-> 不得 用 `startswith("<hierarchy")`。
+> **C3**：抓取有效性判据必须用 `find(...) >= 0` 或剥掉 XML 声明，
+> 不得用 `startswith("<hierarchy")`。
 
 ### 1.4 ★ 陷阱四：原地覆写导致读到上一份内容
 
@@ -88,8 +89,8 @@ raw[:200].find(b"<hierarchy") >= 0        # ← 正确
 我观测到：切换屏幕后连续 5 次 `dump + cat`，md5 全部相同
 （`fb029f35d3bae2ffc953f1ead999cb50`），`rm -f` 之后仍然相同。
 
-> **C4**：dump 之前 必须 `rm -f` 远端文件；
-> 且 必须 用内容签名判定"这次抓的是不是新内容"，
+> **C4**：dump 之前必须 `rm -f` 远端文件；
+> 且必须用内容签名判定"这次抓的是不是新内容"，
 > 不能只判"是不是合法 XML"。
 
 **注意**：这一条我**没有完全排除**是"屏幕真的没变"。
@@ -154,10 +155,10 @@ def capture(adb, dev, remote):
 
 | # | 条件 |
 |---|---|
-| C1 | 所有 adb 调用 必须 检查 returncode 与 stderr |
-| C2 | 读 adb 输出 必须 二进制 + `decode("utf-8","replace")` |
-| C3 | 有效性判据 必须 用 `find(...) >= 0`，不得 用 `startswith("<hierarchy")` |
-| C4 | dump 前 必须 `rm -f` 远端文件；必须 用内容签名判新 |
+| C1 | 所有 adb 调用必须检查 returncode 与 stderr |
+| C2 | 读 adb 输出必须二进制 + `decode("utf-8","replace")` |
+| C3 | 有效性判据必须用 `find(...) >= 0`，不得用 `startswith("<hierarchy")` |
+| C4 | dump 前必须 `rm -f` 远端文件；必须用内容签名判新 |
 
 ---
 

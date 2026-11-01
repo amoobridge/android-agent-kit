@@ -75,7 +75,7 @@ class TestSharedKeys:
         assert len(shared_keys(S1, S2)) == 10
 
     def test_shared_keys_is_identity_only(self):
-        """键交集 不得 掺几何位置。"""
+        """键交集不得掺几何位置。"""
         a = _el(ref="e1", label="X", bounds=(0, 0, 100, 100))
         b = _el(ref="e9", label="X", bounds=(0, 900, 100, 1000))
         assert base_key(a) == base_key(b), "位置不同不影响键"
@@ -176,7 +176,7 @@ class TestResolveAcross:
     def test_cross_page_row_is_gone(self):
         """★ 主页的「Network & internet」在子页上不存在 → found=False。
 
-        不得 回退到"位置最接近的"——那正是静默假匹配的成因。
+        不得回退到"位置最接近的"——那正是静默假匹配的成因。
         """
         m = resolve_across(H, S1, "e5")
         assert m.found is False and m.tier == TIER_NONE and m.trusted is False

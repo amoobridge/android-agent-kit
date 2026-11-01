@@ -3,6 +3,7 @@
 **版本** 0.1.0 · **日期** 2026-10-27 · **License** Apache-2.0
 **测试环境** AVD `avd-api35`（Android 15 / Google APIs / arm64-v8a），emulator-5554
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 0. 这个问题是什么
@@ -128,9 +129,9 @@ occlusion = overlap_area(element, ime) / area(element)
 而 XML 完全不反映这件事。猜"没键盘"会让 agent 点空气；
 猜"有键盘"会让它在正常场景下拒绝点击。
 
-> **C1**：没有 IME 窗口信息时，可及性 必须 报 `unknown`，
-> 不得 假定键盘未弹起。
-> **C1a**：只有 XML 时，应该 在报告里显式声明
+> **C1**：没有 IME 窗口信息时，可及性必须报 `unknown`，
+> 不得假定键盘未弹起。
+> **C1a**：只有 XML 时，应该在报告里显式声明
 > 「键盘状态未知」，而不是静默跳过。
 
 ### 3.4 IME 判据是 type，不是标题
@@ -138,8 +139,8 @@ occlusion = overlap_area(element, ime) / area(element)
 标题是输入法的名字（`English (US) (QWERTY)`），随用户安装的输入法而变，
 **不能当判据**。判据是 `type == TYPE_INPUT_METHOD (2)`。
 
-> **C2**：识别 IME 窗口 必须 用 `type == TYPE_INPUT_METHOD`，
-> 不得 用标题匹配。
+> **C2**：识别 IME 窗口必须用 `type == TYPE_INPUT_METHOD`，
+> 不得用标题匹配。
 
 ---
 
@@ -152,8 +153,8 @@ occlusion = overlap_area(element, ime) / area(element)
 | `uiautomator dump` XML | ❌ 不可能 | 键盘不在 XML 里 |
 | `adb shell dumpsys window` | ✅ 精确 | 同样非公开 API |
 
-> **C3**：正式实现 必须 用 `AccessibilityWindowInfo`。
-> `dumpsys` 系列仅可用于取证与测试，不得 出现在生产路径。
+> **C3**：正式实现必须用 `AccessibilityWindowInfo`。
+> `dumpsys` 系列仅可用于取证与测试，不得出现在生产路径。
 
 ### 4.1 一个负发现
 
@@ -192,13 +193,13 @@ r = audit_xml(root, None)
 
 | # | 条件 |
 |---|---|
-| C1 | 没有 IME 窗口信息时，可及性 必须 报 `unknown`，不得 假定键盘未弹起 |
-| C1a | 只有 XML 时 应该 显式声明「键盘状态未知」，不静默跳过 |
-| C2 | 识别 IME 必须 用 `type == TYPE_INPUT_METHOD`，不得 用标题匹配 |
-| C3 | 正式实现 必须 用 `AccessibilityWindowInfo`；`dumpsys` 仅限取证 |
-| C4 | 遮挡比 必须 按面积算，不得 用 y 坐标大小比较 |
-| C5 | 遮挡比恰好 1.0 必须 判 `occluded` |
-| C6 | `parse_bounds` 必须 正确处理 `[x1,y1][x2,y2]` 内部的逗号 |
+| C1 | 没有 IME 窗口信息时，可及性必须报 `unknown`，不得假定键盘未弹起 |
+| C1a | 只有 XML 时应该显式声明「键盘状态未知」，不静默跳过 |
+| C2 | 识别 IME 必须用 `type == TYPE_INPUT_METHOD`，不得用标题匹配 |
+| C3 | 正式实现必须用 `AccessibilityWindowInfo`；`dumpsys` 仅限取证 |
+| C4 | 遮挡比必须按面积算，不得用 y 坐标大小比较 |
+| C5 | 遮挡比恰好 1.0 必须判 `occluded` |
+| C6 | `parse_bounds` 必须正确处理 `[x1,y1][x2,y2]` 内部的逗号 |
 
 **一致性级别**
 

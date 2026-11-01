@@ -3,6 +3,7 @@
 **版本** 0.1.0 · **日期** 2026-10-27 · **License** Apache-2.0
 **测试环境** AVD `avd-api35`（Android 15 / Google APIs / arm64-v8a），emulator-5554
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 0. 这个问题是什么
@@ -102,9 +103,9 @@ scrollable, long-clickable, password, selected, bounds
 | **无障碍 API** | `!isShowingHintText()` | ✅ 精确 |
 | **无障碍 API（次选）** | `textSelectionStart >= 0` | ✅ 精确 |
 
-> **C1**：主张"字段为空"的实现 不得 只用 `text` 为空字符串作判据。
-> **C1a**：若只能拿到 XML dump，必须 在文档里声明该判据不可靠，
-> 且 应该 用启发式（如属性值含裸换行符）并标注为启发式。
+> **C1**：主张"字段为空"的实现不得只用 `text` 为空字符串作判据。
+> **C1a**：若只能拿到 XML dump，必须在文档里声明该判据不可靠，
+> 且应该用启发式（如属性值含裸换行符）并标注为启发式。
 
 ---
 
@@ -124,15 +125,15 @@ scrollable, long-clickable, password, selected, bounds
 `focusable="true"` 只说"这个节点**可以**获得焦点"，不说明它**现在有**。
 判定聚焦必须用 `focused`，不是 `focusable`。
 
-> **C2**：D2 判定 必须 用 `focused`，不得 用 `focusable`。
+> **C2**：D2 判定必须用 `focused`，不得用 `focusable`。
 
 ### 2.3 聚焦不等于可写
 
 聚焦只是光标在里面。字段仍可能是只读的（`isEditable() == false`）。
 `ACTION_SET_TEXT` 对只读字段不会生效。
 
-> **C3**：D3 判定 必须 用 `isEditable()`；XML 层只能用 class 名含
-> `EditText` 作**启发式**，且 必须 标注为启发式。
+> **C3**：D3 判定必须用 `isEditable()`；XML 层只能用 class 名含
+> `EditText` 作**启发式**，且必须标注为启发式。
 
 ---
 
@@ -161,9 +162,9 @@ at android.os.Binder.execTransact(Binder.java:1444)
 **这不是无障碍 API 的问题，是 adb 命令行的问题。**
 `input text` 也清不了空（空参数同样送不到）。
 
-> **C4**：清场 不得 依赖"发送空文本"——空 extra 在
+> **C4**：清场不得依赖"发送空文本"——空 extra 在
 > `am broadcast --es` 与 `input text` 两条路上都送不到。
-> **C4a**：清场 应该 用 `KEYCODE_DEL`，且轮数 必须 由回读判定收敛，
+> **C4a**：清场应该用 `KEYCODE_DEL`，且轮数必须由回读判定收敛，
 > 不写死。
 
 ### 3.3 正确做法：删到不再变化
@@ -179,7 +180,7 @@ repeat:
 
 textin 的 `../textin/tools/compare_paths.py` 用这条，实测 12 轮内收敛。
 
-> **C5**：清场的收敛判据 必须 是"回读不再变化"，不得 是固定轮数。
+> **C5**：清场的收敛判据必须是"回读不再变化"，不得是固定轮数。
 
 ### 3.4 但清完之后你还不知道它是不是空的
 
@@ -188,7 +189,7 @@ DEL 清干净后，`text` 立刻变成 hint（§1.1）。
 而"是否为空"必须回到 §1.5 的 `isShowingHintText()`。
 
 > **C6**：D4（清干净了吗）与 D1（是空的吗）是两个问题，
-> 必须 用不同判据，不得 互相替代。
+> 必须用不同判据，不得互相替代。
 
 ---
 
@@ -231,9 +232,9 @@ v = verdict(st)
 | `is_focused` | bool | `isFocused()` |
 | `text` | string | `getText()` |
 
-> **C7**：API 层 JSON 的字段名 必须 与上表一致，以便不同后端互换。
+> **C7**：API 层 JSON 的字段名必须与上表一致，以便不同后端互换。
 
-> **C8**：`focused`（归一结果）必须 优先于
+> **C8**：`focused`（归一结果）必须优先于
 > `is_focused`（原始布尔）作为 D2 判据。
 >
 > 理由：`focus == "none"` 表示**根本没找到焦点输入节点**，是比
@@ -248,15 +249,15 @@ v = verdict(st)
 
 | # | 条件 |
 |---|---|
-| C1 | D1 不得 只用 `text` 为空字符串作判据 |
-| C1a | 只有 XML 时 必须 声明判据不可靠；启发式 必须 标注 |
-| C2 | D2 必须 用 `focused`，不得 用 `focusable` |
-| C3 | D3 必须 用 `isEditable()`；class 名启发式 必须 标注 |
-| C4 | 清场 不得 依赖发送空文本 |
-| C4a | 清场轮数 必须 由回读收敛，不得 写死 |
-| C5 | 清场收敛判据 必须 是"回读不再变化" |
-| C6 | D4 与 D1 必须 用不同判据 |
-| C7 | API 层 JSON 字段名 必须 与 §5 一致 |
+| C1 | D1 不得只用 `text` 为空字符串作判据 |
+| C1a | 只有 XML 时必须声明判据不可靠；启发式必须标注 |
+| C2 | D2 必须用 `focused`，不得用 `focusable` |
+| C3 | D3 必须用 `isEditable()`；class 名启发式必须标注 |
+| C4 | 清场不得依赖发送空文本 |
+| C4a | 清场轮数必须由回读收敛，不得写死 |
+| C5 | 清场收敛判据必须是"回读不再变化" |
+| C6 | D4 与 D1 必须用不同判据 |
+| C7 | API 层 JSON 字段名必须与 §5 一致 |
 
 **一致性级别**
 

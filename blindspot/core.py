@@ -235,7 +235,7 @@ def ime_agreement(screenshot_ime_top: int | None,
                   tolerance: int = 0) -> dict:
     """C7：两条通道对「IME 上边界」的认定是否一致。
 
-    不一致时 必须 显式报告，不得 静默取其一。
+    不一致时必须显式报告，不得静默取其一。
 
     为什么需要：`screencap` 截到整个屏幕（键盘在里面），
     `AccessibilityWindowInfo` 报 IME 窗口 bounds。两者应描述同一个键盘。

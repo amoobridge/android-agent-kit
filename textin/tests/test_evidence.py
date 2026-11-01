@@ -1,9 +1,9 @@
-"""textin 测试：从已提交的真机数据复算 SPEC 的 必须 条件。
+"""textin 测试：从已提交的真机数据复算 SPEC 的必须条件。
 
 为什么需要这个
 --------------
-textin 的 SPEC 有 8 条 必须（C1-C7a），`data/` 有两份真机取证 JSON，
-但**此前没有任何测试从数据复算这些 必须 是否成立**。
+textin 的 SPEC 有 8 条必须（C1-C7a），`data/` 有两份真机取证 JSON，
+但**此前没有任何测试从数据复算这些必须是否成立**。
 → SPEC 声称的约束与数据之间没有判据，改数据/改 SPEC 都不会有人报警。
 
 本测试从 `data/probe_results.json` 与 `data/compare_results.json` 复算：
@@ -11,8 +11,8 @@ textin 的 SPEC 有 8 条 必须（C1-C7a），`data/` 有两份真机取证 JSO
 | SPEC 条文 | 复算什么 |
 |---|---|
 | C1  不得假设空输入框 text 是空串 | baseline 是 hint（非空），且字段确实为空 |
-| C5  失败分类 必须 记 adb 退出码与 stderr | probe 每条都有 adb_rc / adb_stderr |
-| C6  报告 必须 区分静默失败与有声失败 | 数据里两类都存在且可区分 |
+| C5  失败分类必须记 adb 退出码与 stderr | probe 每条都有 adb_rc / adb_stderr |
+| C6  报告必须区分静默失败与有声失败 | 数据里两类都存在且可区分 |
 | C2  三分法不用二分法 | verdict 恰为 3 个取值 |
 | C7  绕开 shell 要分开证传输层与 API | 两份数据行对齐，可交叉验证 |
 

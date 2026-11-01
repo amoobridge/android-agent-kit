@@ -2,6 +2,7 @@
 
 **版本** 0.1.0 · **日期** 2026-10-27 · **License** Apache-2.0
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 1. 范围
@@ -69,7 +70,7 @@ shared_keys(a, b) := key_set(a) ∩ key_set(b)
 | `anon_class` | 仅类名相同 | ❌ |
 | `none` | 无身份依据（只可能来自几何匹配） | ❌ |
 
-**实现 不得 在跨页解析中使用几何位置作为依据。**
+**实现不得在跨页解析中使用几何位置作为依据。**
 回退到"位置最接近的"元素，正是 screendiff 跨页静默假匹配的成因。
 
 ## 4. 审计
@@ -102,8 +103,8 @@ audit_diff(prev, cur) -> AuditedDiff
 | `same_screen` 只用 snapshot_id | 必须 |
 | `shared_keys` 只用内容键，不掺几何 | 必须 |
 | 跨页解析只用 `rid` / `label_class` 两级 | 必须 |
-| 找不到时返回 not-found，不得 几何回退 | 必须 |
-| 多候选时必须报 `ambiguous`，不得 自动选一个 | 必须 |
+| 找不到时返回 not-found，不得几何回退 | 必须 |
+| 多候选时必须报 `ambiguous`，不得自动选一个 | 必须 |
 | `audit_diff` 不修改 screendiff 的输出 | 必须 |
 | 提供 `false_match_rate` | 应该 |
 | 结构性 id 不得作为 `rid` tier 依据 | 必须 |

@@ -1,5 +1,12 @@
 # uidref · 安卓 UI 元素引用层
 
+> **English**
+>
+> A reference layer for Android UI elements: let the model name an element (`e14`) instead of guessing pixel coordinates.
+>
+> Flattening `uiautomator dump` XML loses most clickable targets, because they are anonymous containers whose labels live in their children.
+>
+> Verify: `./run-tests.sh`
 > 让模型**引用元素**，而不是猜坐标。
 >
 > `click e14` —— 不是 `click (540, 1200)`
@@ -186,10 +193,10 @@ SPEC §10 给出**一致性级别**（Level 1–3），Level 3 才可声称"完�
 | # | 位置 | 问题 | 修订 |
 |---|---|---|---|
 | A1 | §5 中心点 | 规范写 `(x1+x2)//2` 借用 Python 语法。JS 的 `|0` / `>>1` 向零截断，`Math.floor` 向负无穷。§5 又允许负坐标 → 差 1 | 改为「必须 floor（向负无穷），不是向零截断」 |
-| A2 | §3.1 结构性 id | 列举 8 个名字后写「**等**结构性容器名」——开口，各实现自行扩充会破坏确定性 | 改为**穷举集合**，不得 自行扩充 |
+| A2 | §3.1 结构性 id | 列举 8 个名字后写「**等**结构性容器名」——开口，各实现自行扩充会破坏确定性 | 改为**穷举集合**，不得自行扩充 |
 | A3 | §1 XML 解析 | 未定义输入边界：实体、CDATA、注释、命名空间、畸形输入 | 新增 §1.1 输入子集；明确畸形输入不约束 |
 | A4 | §2.4 编号 | 只说「确定性」，未说编号顺序。按 bounds 排序同样确定但 ref 不同 | 明确「前序深度优先文档序，从 e1 连续递增」 |
-| A5 | §3.3 继承 | 未说是否含 content-desc、是否跨代、上限是建议 | 明确 text+content-desc、跨代、上限升为 必须 4 段 |
+| A5 | §3.3 继承 | 未说是否含 content-desc、是否跨代、上限是建议 | 明确 text+content-desc、跨代、上限升为必须 4 段 |
 
 ### 顺带修掉的两个向量失效 bug
 

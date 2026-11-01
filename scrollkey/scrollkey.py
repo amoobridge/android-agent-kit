@@ -84,7 +84,7 @@ def key_map(snap: Snapshot) -> dict[str, Element]:
 def resolve_key(snap: Snapshot, key: str) -> Element | None:
     """键 → 元素。找不到返回 None。
 
-    不得 抛异常，也 不得 回退到"最接近的"元素——
+    不得抛异常，也不得回退到"最接近的"元素——
     回退会把"找错了"伪装成"找到了"。
     """
     return key_map(snap).get(key)

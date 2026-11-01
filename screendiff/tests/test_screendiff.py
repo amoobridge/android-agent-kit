@@ -162,10 +162,10 @@ class TestNotVacuous:
 
     断言分两级：
 
-    * **A 级（每条用例）**：至少一种变异 必须 改变输出。
+    * **A 级（每条用例）**：至少一种变异必须改变输出。
       抓"这条用例完全死了"。
     * **B 级（定向）**：声称测某条规则的用例，对该规则的定向变异
-      必须 改变输出。抓"这条用例测的是别的东西"。
+      必须改变输出。抓"这条用例测的是别的东西"。
     """
 
     @staticmethod
@@ -242,7 +242,7 @@ class TestNotVacuous:
     def test_c_contract_fields_present(self):
         """C 级：契约字段齐全。缺字段会让整个验证对真实分歧失明。
 
-        uidref 踩过：center 取整规则写了 必须，但比对契约没这个字段，
+        uidref 踩过：center 取整规则写了必须，但比对契约没这个字段，
         于是向零截断的实现测一致性竟然全绿。
         """
         for f in sorted(VECTORS.glob("*.json")):

@@ -218,7 +218,7 @@ class TestBoundaries:
         assert len(key_map(_snap_from(els))) == 4, "靠序号才区分得开"
 
     def test_no_geometric_matching(self):
-        """键匹配 必须 是纯内容的，不得掺几何位置。
+        """键匹配必须是纯内容的，不得掺几何位置。
 
         掺了位置就继承了 screendiff 已记录的全屏容器误配问题。
         """

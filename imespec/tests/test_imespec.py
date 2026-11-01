@@ -148,7 +148,7 @@ class TestRealEvidence:
             f"XML 里出现了非 App 的 package: {pkgs}"
 
     def test_xml_only_cannot_judge(self):
-        """只有 XML 时 必须 报 unknown，即使键盘真的弹着。"""
+        """只有 XML 时必须报 unknown，即使键盘真的弹着。"""
         root = ET.parse("data/dump_keyboard_up.xml").getroot()
         r = audit_xml(root, None)
         assert r["ime_known"] is False
@@ -163,10 +163,10 @@ class TestSpecConditions:
     """SPEC C1–C6 的逐条断言。
 
     用 tools/check_spec_coverage.py 扫出这些条件此前**没有对应断言**
-    （SPEC 写了 必须，但测试里找不到）。逐条补上。
+    （SPEC 写了必须，但测试里找不到）。逐条补上。
     """
 
-    # ---- C4：遮挡比按面积算，不得 用 y 坐标大小比较 ----
+    # ---- C4：遮挡比按面积算，不得用 y 坐标大小比较 ----
     def test_c4_occlusion_by_area_not_y(self):
         """★ C4：遮挡比 = overlap / element.area，按面积算。
 
@@ -215,7 +215,7 @@ class TestSpecConditions:
 
     # ---- C5：遮挡比恰好 1.0 判 occluded ----
     def test_c5_exact_full_occlusion_is_occluded(self):
-        """★ C5：遮挡比恰好 1.0 必须 判 occluded（不是 partially）。"""
+        """★ C5：遮挡比恰好 1.0 必须判 occluded（不是 partially）。"""
         ime = Rect(0, 1517, 1080, 2400)
         exact = Rect(100, 1600, 200, 1800)      # 完全在键盘内
         assert exact.overlap(ime) == exact.area, "构造失败：应完全在键盘内"

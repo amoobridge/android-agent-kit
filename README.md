@@ -6,6 +6,24 @@
 
 ---
 
+> **English**
+>
+> A set of reusable libraries for **agents operating Android devices**, plus the
+> evidence behind them. Every library stays inside one hard boundary: *no root,
+> no process injection, no device-admin, no modification of third-party apps —
+> only public system APIs.*
+>
+> The organising idea: most failures in Android GUI automation are **silent** —
+> wrong coordinates, taps that land on the keyboard, text that gets truncated or
+> executed instead of written. These libraries make those failures explicit and
+> testable rather than plausible-looking.
+>
+> Each library ships a specification, a reference implementation, golden vectors,
+> tests, real-device evidence, and a note on *why its numbers can be trusted*.
+>
+> Verify: `./run-tests.sh`
+
+
 ## 这是什么
 
 一批面向「**agent 操作安卓设备**」的可复用库。全部遵守同一条硬边界：

@@ -2,6 +2,7 @@
 
 **版本** 0.1.0 · **日期** 2026-10-27 · **License** Apache-2.0
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 0. 这个库是什么
@@ -88,11 +89,11 @@ effective_level:
 
 | # | 条件 |
 |---|---|
-| C1 | `verify_ledger()` 复算 必须 排除 V4 和有未排除替代解释的条目 |
-| C2 | `effective_level` 必须 在存在未排除替代解释时返回 V0 |
-| C3 | `effective_level` 必须 在 `deterministic=True` 时至少 V1 |
-| C4 | `citable_but_should_not()` 必须 为空 |
-| C5 | `refuted_but_citable()` 必须 为空 |
+| C1 | `verify_ledger()` 复算必须排除 V4 和有未排除替代解释的条目 |
+| C2 | `effective_level` 必须在存在未排除替代解释时返回 V0 |
+| C3 | `effective_level` 必须在 `deterministic=True` 时至少 V1 |
+| C4 | `citable_but_should_not()` 必须为空 |
+| C5 | `refuted_but_citable()` 必须为空 |
 
 ---
 

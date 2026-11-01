@@ -4,6 +4,14 @@
 
 ---
 
+> **English**
+>
+> Verification levels for empirical claims: hypothesis, reproducible, cross-state, cross-validated, refuted.
+>
+> A single observation plus a tidy pattern is the most dangerous thing in this project.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 **单次观测只能产生假设，不能产生结论。**

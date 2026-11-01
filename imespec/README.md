@@ -5,6 +5,14 @@
 
 ---
 
+> **English**
+>
+> Decide whether an element is actually reachable while the on-screen keyboard is up.
+>
+> The IME is a separate window that `uiautomator dump` never captures, and the app window does not shrink to make room for it.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 **一个元素报着合法 `bounds` 和 `clickable=true`，点下去却命中键盘——

@@ -6,6 +6,15 @@
 
 ---
 
+> **English**
+>
+> A minimal reference implementation of `ACTION_SET_TEXT` over an accessibility
+> service — the path that survives shell metacharacters, spaces and non-ASCII,
+> where `adb shell input text` does not.
+>
+> Audit: [`AUDIT.md`](AUDIT.md)
+
+
 ## 一句话
 
 一个**只有两个 Java 文件**的无障碍服务，用来证明

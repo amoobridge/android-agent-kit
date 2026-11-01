@@ -49,7 +49,7 @@ WINDOWS = [
                   "bounds_in_screen": "0 1517 1080 2400"}],
      "expect": []},
     {"id": "toast-type-not-added",
-     "why": "★ type==2004（toast）未经验证，不得 加入盲区（C2）。",
+     "why": "★ type==2004（toast）未经验证，不得加入盲区（C2）。",
      "windows": [{"type": 2004, "title": "toast",
                   "bounds_in_screen": "0 2000 1080 2100"}],
      "expect": []},

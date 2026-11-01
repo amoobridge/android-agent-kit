@@ -4,6 +4,14 @@
 
 ---
 
+> **English**
+>
+> Forensics of text input on Android: which inputs survive `adb shell input text`, and an alternative path.
+>
+> Shell metacharacters are executed on-device, spaces truncate silently, and non-ASCII throws — all with misleading exit codes.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 `adb shell input text` 在 **19 类测试输入里只有 4 类能完整落地**。
@@ -308,10 +316,10 @@ v7 尤其值得记：它让我一度以为"SET_TEXT 也过不了 shell"。
 实际上 SET_TEXT 从来没碰过 shell——是**我把文本送到它面前的那一步**碰了。
 `am broadcast --es` 和 `input text` 一样，都是 `adb shell` 的子命令。
 
-所以 SPEC 把两条立成 必须：
+所以 SPEC 把两条立成必须：
 
-- 输入前 必须 验证 `focused == true`
-- 输入前 必须 验证字段已回到基线
+- 输入前必须验证 `focused == true`
+- 输入前必须验证字段已回到基线
 
 **一条取证结论的可信度，取决于装置本身有没有被判据保护。**
 

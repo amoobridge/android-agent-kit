@@ -6,6 +6,14 @@
 
 ---
 
+> **English**
+>
+> Trust levels for element tracking across screens, with an explicit false-match rate.
+>
+> Geometric matching across pages produces confident nonsense that looks perfectly reasonable in the numbers.
+>
+> Verify: `./run-tests.sh`
+
 ## ★ 一个真实事故
 
 `screendiff` 比对**设置主页**和**通知子页**：

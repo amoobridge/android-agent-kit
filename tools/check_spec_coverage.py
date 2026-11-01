@@ -219,7 +219,7 @@ def main() -> int:
     print(f"{'合计':<14}{r['total']:>4} {r['covered']:>4} {len(r['gaps']):>4}")
     print()
     if r["gaps"]:
-        print("★ 缺口（SPEC 有 必须 但测试里找不到对应断言）：")
+        print("★ 缺口（SPEC 有必须但测试里找不到对应断言）：")
         for g in r["gaps"]:
             print(f"  [{g['lib']} {g['id']}] {g['desc']}")
             print(f"       {g['note']}")

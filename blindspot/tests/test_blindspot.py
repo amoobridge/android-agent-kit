@@ -80,7 +80,7 @@ class TestNotVacuous:
                                    "bounds_in_screen": "0 0 10 10"}]) == [], t
 
     def test_b_screenshot_none_not_verified(self):
-        """没有截图时 不得 假装验证过（C4）。"""
+        """没有截图时不得假装验证过（C4）。"""
         root = xml_root_from([{"clickable": "true",
                                "bounds": "[0,1712][1080,1935]", "text": ""}])
         r = cross_check(root, [{"type": 2, "title": "k",
@@ -147,7 +147,7 @@ class TestSpecConditions:
     """SPEC C5–C7 的逐条断言。"""
 
     def test_c5_overlap_by_area_not_y(self):
-        """★ C5：判定重叠 必须 用面积，不得 用 y 坐标大小比较。
+        """★ C5：判定重叠必须用面积，不得用 y 坐标大小比较。
 
         反例：一个 y1 在 IME 上方、但向下伸入 IME 的元素。
         按 `y1 >= ime.y1` 判重叠会漏掉它。
@@ -192,7 +192,7 @@ class TestSpecConditions:
         assert r["delta"] == 0
 
     def test_c7_mismatch_is_reported_not_silenced(self):
-        """★ C7：不一致 必须 显式报告，不得 静默取其一。"""
+        """★ C7：不一致必须显式报告，不得静默取其一。"""
         r = ime_agreement(1517, 1500)
         assert r["agreement"] is False
         assert r["delta"] == 17
@@ -231,7 +231,7 @@ class TestSpecConditions:
             "C3：必须给出 App 参考区域——否则无法区分盲区与 App 内容")
 
     def test_c3_without_screenshot_reports_none(self):
-        """没有截图时 `screenshot_agrees` 必须 报 None，不假装验证过。"""
+        """没有截图时 `screenshot_agrees` 必须报 None，不假装验证过。"""
         xml = (
             '<hierarchy><node bounds="[0,1517][1080,2400]" '
             'clickable="true" text="btn"/></hierarchy>'

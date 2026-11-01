@@ -15,7 +15,7 @@
       "cur":  [ ... ]
     }
 
-    out.json（全部字段 必须 存在）:
+    out.json（全部字段必须存在）:
     {
       "matched": [{"prev_ref":"e1","cur_ref":"e1","changes":[]}],
       "added":   [{"ref":"e2","role":"btn","label":"确定"}],
@@ -26,7 +26,7 @@
     }
 
     · changes 是变化类列表，unchanged 时为空数组
-    · matched / added / removed 的顺序 必须 与参考实现一致
+    · matched / added / removed 的顺序必须与参考实现一致
     · 布尔一律 JSON true/false
 
 用法::

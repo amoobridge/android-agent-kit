@@ -280,7 +280,7 @@ VECTORS.append({
         case(_wrap(_node(clickable="true", text="负坐标", bounds="[-10,-10][50,50]")),
              "负坐标允许——某些悬浮窗如此"),
         case(_wrap(_node(clickable="true", text="负中心", bounds="[-4,-4][3,3]")),
-             "中心为负时 必须 floor：floor(-0.5) = -1，向零截断会得 0"),
+             "中心为负时必须 floor：floor(-0.5) = -1，向零截断会得 0"),
         case(_wrap(_node(clickable="true", text="跨零", bounds="[-101,-101][-10,-10]")),
              "和为奇数且为负：floor(-55.5) = -56，向零截断会得 -55"),
         case(_wrap(_node(clickable="true", text="缺 bounds")),

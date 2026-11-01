@@ -2,6 +2,7 @@
 
 **Version 0.1 · License Apache-2.0**
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 1. 问题陈述
@@ -40,10 +41,10 @@ GUI Agent 每一步动作后都要回答同一个问题：**界面变了没有�
 
 | # | 原则 | 含义 |
 |---|---|---|
-| P1 | **匹配必须确定性** | 同一对输入 必须 产出同一匹配。禁止依赖字典序、哈希、并发 |
-| P2 | **匹配必须完备** | 每个元素 必须 被判定为 matched / added / removed 之一，不得静默丢弃 |
-| P3 | **平移不是变化** | 元素位置改变 必须 归类为 `moved`，与「新增/消失/状态变化」分开 |
-| P4 | **分类必须互斥可判** | 一个 matched 元素可同时有多类变化，但每类变化的判定 必须 独立、无歧义 |
+| P1 | **匹配必须确定性** | 同一对输入必须产出同一匹配。禁止依赖字典序、哈希、并发 |
+| P2 | **匹配必须完备** | 每个元素必须被判定为 matched / added / removed 之一，不得静默丢弃 |
+| P3 | **平移不是变化** | 元素位置改变必须归类为 `moved`，与「新增/消失/状态变化」分开 |
+| P4 | **分类必须互斥可判** | 一个 matched 元素可同时有多类变化，但每类变化的判定必须独立、无歧义 |
 | P5 | **派生语义不得猜** | `effect` / `stuck` 必须由 P1–P4 的结果推导，不得引入额外启发式 |
 
 ---
@@ -157,7 +158,7 @@ Agent 点了 `prev` 里的 `target_ref`，这个动作起作用了吗？
 | `target_changed` | `target_ref` 对应的 matched 对**有任一变化** |
 | `target_unchanged` | `target_ref` 对应的 matched 对为 `unchanged` |
 
-`effect` 必须 同时附带：
+`effect` 必须同时附带：
 - `changes`：该 matched 对命中的变化类列表
 - `added_count` / `removed_count`
 - `added_overlapping_target`：`added` 中 bounds 与 target 的 bounds 重叠率 ≥ 0.5 的元素列表
@@ -170,7 +171,7 @@ Agent 点了 `prev` 里的 `target_ref`，这个动作起作用了吗？
 最近 `n` 帧（含当前帧）**两两 `is_identical`** 时为 `true`。
 
 - `history` 是 ChangeSet 列表，最新的在末尾
-- `n < 2` 时 必须 返回 `false`
+- `n < 2` 时必须返回 `false`
 - `history` 长度不足 `n` 时返回 `false`
 
 **这是 Agent 的止损条件**：连续 `n` 步界面无变化，说明动作没生效，
@@ -187,7 +188,7 @@ is_loading = (len(cur.elements) <= 2)
 ```
 
 理由是：加载态通常只剩一个进度条或一个空滚动容器，可点目标尚未渲染。
-**这是 应该 不是 必须**——不同应用的加载态差异极大，实现可自行调整，
+**这是应该不是必须**——不同应用的加载态差异极大，实现可自行调整，
 但调整后不得声称符合本规范的这一条。
 
 ---
@@ -234,7 +235,7 @@ is_loading = (len(cur.elements) <= 2)
 
 - `matched[].changes` 是变化类列表，`unchanged` 时为空数组
 - `added` / `removed` 按原快照的 `ref` 顺序排列
-- 全部字段 必须 存在
+- 全部字段必须存在
 
 ### 8.2 如何验证
 
@@ -255,7 +256,7 @@ python tools/verify_impl.py vectors/ --cmd "node js/impl.js"
    O(n²)。需要增量匹配的场景不在范围内。
 4. **手势连续性**。连续滑动产生的中间帧未采集时，`moved` 的距离可能很大。
    规范不假设帧间连续性。
-5. **`is_loading` 的准确性**。见 §6.3，是 应该 级启发式。
+5. **`is_loading` 的准确性**。见 §6.3，是应该级启发式。
 
 ---
 

@@ -3,6 +3,7 @@
 **版本** 0.1.0 · **日期** 2026-10-27 · **License** Apache-2.0
 **测试环境** AVD `avd-api35`（Android 15 / Google APIs / arm64-v8a），emulator-5554
 
+**关键词**：必须（MUST）/ 不得（MUST NOT）/ 应该（SHOULD）/ 可以（MAY）。
 ---
 
 ## 0. 这个问题是什么
@@ -105,8 +106,8 @@ XML 看不见的屏幕区域。当前只认定 IME：
 blind = AccessibilityWindowInfo 中 type == TYPE_INPUT_METHOD (2) 的 bounds
 ```
 
-> **C1**：识别盲区 必须 用 `type == TYPE_INPUT_METHOD`，
-> 不得 用标题匹配（标题随输入法而变）。
+> **C1**：识别盲区必须用 `type == TYPE_INPUT_METHOD`，
+> 不得用标题匹配（标题随输入法而变）。
 
 > **C2**：**不得凭推测把其他窗口类型加入盲区。**
 > toast、系统权限对话框、通知栏是否也在 XML 盲区里，**尚未验证**。
@@ -126,8 +127,8 @@ phantom = XML 报 clickable=true 且 bounds 与盲区有重叠
 > **C3**：截图是参考通道，XML 是派生通道。
 > 两者冲突时，**XML 错**。
 
-> **C4**：没有截图时，`screenshot_agrees` 必须 报 None，
-> 不得 假装验证过。
+> **C4**：没有截图时，`screenshot_agrees` 必须报 None，
+> 不得假装验证过。
 
 ---
 
@@ -159,13 +160,13 @@ r = cross_check(ET.parse("dump.xml").getroot(), windows)
 
 | # | 条件 |
 |---|---|
-| C1 | 识别盲区 必须 用 `type == TYPE_INPUT_METHOD`，不得 用标题匹配 |
-| C2 | 不得 凭推测把未验证的窗口类型加入盲区 |
+| C1 | 识别盲区必须用 `type == TYPE_INPUT_METHOD`，不得用标题匹配 |
+| C2 | 不得凭推测把未验证的窗口类型加入盲区 |
 | C3 | 截图是参考通道；两者冲突时 XML 错 |
-| C4 | 没有截图时 `screenshot_agrees` 必须 报 None |
-| C5 | 判定重叠 必须 用面积，不得 用 y 坐标大小比较 |
-| C6 | `parse_bounds` 必须 正确处理 `[x1,y1][x2,y2]` 内部的逗号 |
-| C7 | 截图与 IME bounds 不一致时 必须 显式报告，不得 静默取其一 |
+| C4 | 没有截图时 `screenshot_agrees` 必须报 None |
+| C5 | 判定重叠必须用面积，不得用 y 坐标大小比较 |
+| C6 | `parse_bounds` 必须正确处理 `[x1,y1][x2,y2]` 内部的逗号 |
+| C7 | 截图与 IME bounds 不一致时必须显式报告，不得静默取其一 |
 
 ---
 
@@ -189,7 +190,7 @@ r = cross_check(ET.parse("dump.xml").getroot(), windows)
 | `imespec` | imespec 判"元素被键盘挡了多少"；blindspot 判"XML 根本不知道键盘存在" |
 | `uidref` | uidref 给 ref；blindspot 判定哪些 ref 是**幻影** |
 | `screenpoint` | screenpoint 做坐标数学；blindspot 判"这个坐标指向谁" |
-| `devapi` | `/v1/act` 执行前 必须 排除幻影目标 |
+| `devapi` | `/v1/act` 执行前必须排除幻影目标 |
 | `screendiff` | ★ 本例中 screendiff 会看到"界面变了"——但那是键盘在响应，不是目标生效 |
 
 **★ 与 screendiff 的关键交互**：blindspot 的失败模式会让 screendiff

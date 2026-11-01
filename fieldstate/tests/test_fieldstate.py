@@ -339,7 +339,7 @@ class TestSpecConditions:
 
     # ---- C7：API 层 JSON 字段名与 SPEC §5 一致 ----
     def test_c7_api_field_names_match_spec(self):
-        """★ C7：`state_from_api` 接受的字段名 必须 与 SPEC §5 表一致。
+        """★ C7：`state_from_api` 接受的字段名必须与 SPEC §5 表一致。
 
         从 SPEC §5 抽出字段名表，逐个构造 API JSON 验证能被接受。
         字段名不一致会导致不同后端不可互换——正是 C7 要防的。

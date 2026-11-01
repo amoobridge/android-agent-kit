@@ -5,6 +5,14 @@
 
 ---
 
+> **English**
+>
+> Reconcile `screencap` and `uiautomator dump` to expose elements that exist in XML but are unreachable on screen.
+>
+> Elements reported as clickable can be covered by the keyboard; tapping them writes into a text field instead of hitting the target.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 **agent 有两条感知通道，它们对"屏幕上有什么"给出不一致的答案。**
@@ -149,7 +157,7 @@ python tools/probe_dualview.py --tap-phantom        # 真机行为验证
 |---|---|
 | `imespec` | imespec 判"元素被键盘挡了多少"；blindspot 判"XML 根本不知道键盘存在" |
 | `uidref` | uidref 给 ref；blindspot 判定哪些 ref 是**幻影** |
-| `devapi` | `/v1/act` 执行前 必须 排除幻影目标 |
+| `devapi` | `/v1/act` 执行前必须排除幻影目标 |
 | `screendiff` | ★ blindspot 的失败模式会让 screendiff 看到"界面变了"——**但那是键盘在响应，不是目标生效** |
 
 **★ 与 screendiff 的关键交互**：`界面变了` ≠ `我的动作生效了`。

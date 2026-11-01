@@ -4,6 +4,14 @@
 
 ---
 
+> **English**
+>
+> Apply claimcheck to every quantitative claim across the asset set, and recompute the levels.
+>
+> Writing the ledger itself triggers over-claiming, because summarising your own evidence carries an optimism bias.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 **claimcheck 定了规则，这个库把规则跑一遍——然后抓到了我给 11/16 条写高了等级。**

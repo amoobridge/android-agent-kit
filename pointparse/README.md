@@ -102,6 +102,14 @@ Apache-2.0
 
 ---
 
+> **English**
+>
+> Parse and validate point output produced by models; report failure instead of guessing.
+>
+> A confident-looking wrong coordinate is worse than an error, and every agent re-implements this parsing ad hoc.
+>
+> Verify: `./run-tests.sh`
+
 ## 验证等级
 
 本资产的量化声明在 **`docs/CLAIMS.md`**（`claimaudit/data/evidence_ledger.json`）登记。

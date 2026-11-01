@@ -1,5 +1,12 @@
 # e2e · 端到端集成演示
 
+> **English**
+>
+> End-to-end demo: model point output → parse → inverse-map → real tap → verify.
+>
+> Proves the coordinate chain works on a real device, not just in synthetic vectors.
+>
+> Verify: `./run-tests.sh`
 > 证明 `pointparse` 与 `screenpoint` 在真机上协同工作。
 
 ## 链路

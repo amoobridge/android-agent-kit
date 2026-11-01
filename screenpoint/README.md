@@ -73,6 +73,14 @@ Apache-2.0
 
 ---
 
+> **English**
+>
+> Deterministic inverse mapping from model coordinates back to device pixels.
+>
+> The one deterministic step in the coordinate chain should not be delegated to the model.
+>
+> Verify: `./run-tests.sh`
+
 ## 验证等级
 
 ### ⚠️ 真机验证覆盖范围（B4，）

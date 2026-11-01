@@ -6,6 +6,14 @@
 
 ---
 
+> **English**
+>
+> Content-derived stable keys for UI elements that survive scrolling.
+>
+> Element refs are positional indices; scrolling reassigns them even when the row itself did not change.
+>
+> Verify: `./run-tests.sh`
+
 ## 问题：ref 表达不了的事
 
 提案03 量化过：**跨页导航 100% 重指派**。双闸门让这种失效报错而不是静默点错，

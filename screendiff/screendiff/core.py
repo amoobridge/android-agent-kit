@@ -28,10 +28,10 @@ _STATE_FLAGS = (
     "editable", "checked", "disabled", "password",
 )
 
-# 变化类。顺序即契约里的枚举顺序，实现 必须 一致。
+# 变化类。顺序即契约里的枚举顺序，实现必须一致。
 CHANGE_KINDS = ("moved", "role_changed", "label_changed", "state_changed")
 
-# is_loading 的角色集合（SPEC §6.3，应该 级）
+# is_loading 的角色集合（SPEC §6.3，应该级）
 _LOADING_ROLES = frozenset({"progress", "scroll"})
 _INTERACTIVE_ROLES = frozenset(
     {"btn", "input", "switch", "item", "radio", "check", "slider"})
@@ -343,7 +343,7 @@ def is_stuck(history: Sequence[ChangeSet], n: int = 3) -> bool:
 
 
 def is_loading(cur: Any) -> bool:
-    """加载态启发式。SPEC §6.3，**应该 级**，规范不强制。"""
+    """加载态启发式。SPEC §6.3，**应该级**，规范不强制。"""
     els = _elements_of(cur)
     if len(els) > 2:
         return False

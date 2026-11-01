@@ -6,6 +6,14 @@
 
 ---
 
+> **English**
+>
+> Screen-change semantics between two snapshots: matched / added / removed / moved / state / label.
+>
+> Position-wise comparison reports everything as changed after a scroll, hiding the one element that actually changed.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话问题
 
 主流 agent 用**按位置逐位比对**判断界面变化。这在安卓上系统性失效：
@@ -45,7 +53,7 @@ changes   每个 matched 元素变的是什么：moved / role / label / state
 |---|---|
 | `effect(target_ref)` | 我点了 `e7`，起作用了吗？四种结论 + 覆盖层检测 |
 | `is_stuck(history, n)` | 连续 n 帧无变化 → **该停了**（agent 止损条件） |
-| `is_loading(cur)` | 是不是加载态（应该 级启发式） |
+| `is_loading(cur)` | 是不是加载态（应该级启发式） |
 
 ---
 
@@ -162,7 +170,7 @@ python tools/verify_impl.py vectors/ --cmd "node js/impl.js"   # 语言无关
 `TestNotVacuous` 三级断言，防「用例空转」：
 
 - **A 级**：每条用例至少对一种变异敏感（穷举翻转 7 个标志、平移 bounds、改写 label）
-- **B 级（定向）**：声称测某条规则的用例，把该规则改回原状，输出 必须 复原。
+- **B 级（定向）**：声称测某条规则的用例，把该规则改回原状，输出必须复原。
   这是真正能抓住「测的是别的东西」那类 bug 的断言
 - **C 级**：契约字段齐全——缺字段会让整个验证对真实分歧失明
 
@@ -200,7 +208,7 @@ screendiff/
 3. **超长列表**。全量比对 O(n²)，万级元素不可用。
 4. **不假设帧间连续性**。连续滑动的中间帧没采到时，`moved` 距离可能很大。
 5. **贪心非全局最优**。选可判定性而非匹配质量，见 SPEC §4.3。
-6. **`is_loading` 是 应该 级**。不同应用加载态差异极大，实现可自行调整，
+6. **`is_loading` 是应该级**。不同应用加载态差异极大，实现可自行调整，
    但调整后不得声称符合这一条。
 7. **只在 4 个真实 dump 上验证过**。样本少，指标是方向性的不是统计性的。
 

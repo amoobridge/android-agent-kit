@@ -5,6 +5,14 @@
 
 ---
 
+> **English**
+>
+> Four silent traps in the `uiautomator dump` capture layer.
+>
+> All four surface as "no data returned" rather than as errors, so they get mistaken for a broken device.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 **你的观测装置会静默失效，而失效看起来像"设备没返回数据"。**

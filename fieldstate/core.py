@@ -135,7 +135,7 @@ def d1_is_empty(st: FieldState) -> str:
     ★ 关键：XML 层 **判不出**，返回 `unknown`。
     只有拿到 `is_showing_hint_text` 或 `text_selection_start` 才有答案。
 
-    SPEC C1：不得 只用 `text` 为空字符串作判据。
+    SPEC C1：不得只用 `text` 为空字符串作判据。
     """
     if st.is_showing_hint_text is not None:
         # API 层：精确
@@ -157,7 +157,7 @@ def d1_is_empty(st: FieldState) -> str:
 def d2_is_focused(st: FieldState) -> str:
     """D2 字段是否聚焦。
 
-    SPEC C2：必须 用 `focused`，不得 用 `focusable`。
+    SPEC C2：必须用 `focused`，不得用 `focusable`。
 
     ★ `focused`（归一结果）优先于 `api_is_focused`（原始布尔）。
     前者已经吃过 `focus == "none"` 这个更强的信号；后者没有。
@@ -176,7 +176,7 @@ def d2_is_focused(st: FieldState) -> str:
 def d3_is_writable(st: FieldState) -> str:
     """D3 字段是否可写。
 
-    SPEC C3：必须 用 `isEditable()`；XML 层只能用 class 名，且是启发式。
+    SPEC C3：必须用 `isEditable()`；XML 层只能用 class 名，且是启发式。
     """
     if st.is_editable is not None:
         return "writable" if st.is_editable else "readonly"

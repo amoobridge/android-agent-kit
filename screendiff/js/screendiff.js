@@ -186,7 +186,7 @@ function isStuck(history, n) {
   return history.slice(-n).every(cs => cs.is_identical);
 }
 
-/** SPEC §6.3：加载态启发式（应该 级） */
+/** SPEC §6.3：加载态启发式（应该级） */
 const LOADING_ROLES = new Set(['progress', 'scroll']);
 const INTERACTIVE_ROLES = new Set(['btn', 'input', 'switch', 'item', 'radio', 'check', 'slider']);
 

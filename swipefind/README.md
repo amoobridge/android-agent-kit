@@ -5,6 +5,14 @@
 
 ---
 
+> **English**
+>
+> Validity and absorption rules for swipe gestures.
+>
+> A swipe that starts on the keyboard writes into the focused field instead of scrolling, and the working distance range is not monotonic.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 **`input swipe` 返回成功、退出码 0，但可能什么都没滚——

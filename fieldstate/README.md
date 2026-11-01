@@ -5,6 +5,14 @@
 
 ---
 
+> **English**
+>
+> Decide whether an input field can be written to: empty / focused / editable / clearable.
+>
+> `text == ""` is wrong — when a field is empty the dump reports the hint text instead, so agents silently skip or clobber the field.
+>
+> Verify: `./run-tests.sh`
+
 ## 一句话
 
 **字段是空的，`text` 却非空——因为空字段会把 hint 报进 `text`。**
@@ -98,7 +106,7 @@ D4 有一条独立发现：**空 extra 送不到**。
 `adb shell am broadcast -a ... --es text_b64 ""` 会让 `am` 自己抛异常
 （`Binder.execTransact`），广播根本没发出去，字段内容原样保留。
 `input text` 同样送不了空参数。
-所以清场 不得 依赖"发送空文本"。
+所以清场不得依赖"发送空文本"。
 
 ---
 
